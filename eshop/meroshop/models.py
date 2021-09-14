@@ -15,16 +15,15 @@ class Category(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=False)
 
-    
-
     class Meta:
 
         db_table = 'categories'
-        ordering = ('created_at',)
+        ordering = ('name',)
         verbose_name_plural = 'categories'
-        
-    def __str__(self):
-            return self.name
 
-    def get_url(self):
-        return reverse('products_by_categogry', args=[self.slug])
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('meroshop:product_list_by_category',
+               args=[self.slug])
