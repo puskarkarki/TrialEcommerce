@@ -30,17 +30,12 @@ class Product(models.Model):
     class Meta:
         db_table = 'products'
         verbose_name_plural = "Products"
-        ordering = ['-created_at']
-
-    def get_url(self):
-        return reverse('product_detail', args=[self.category.slug, self.slug])
+        ordering = ('name',)
 
     def __str__(self):
         return self.name
 
-    def sale_offer_price(self):
-
-        if self.old_price > self.price:
-            return self.price
-        else:
-            return None
+    def get_absolute_url(self):
+        
+        return reverse('Product:product_detail',
+                       args=[self.id, self.slug])
