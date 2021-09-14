@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'meroshop',
     'Product',
+    'cart',
 ]
 
 CART_SESSION_ID = 'cart'
