@@ -7,9 +7,7 @@ from .models import Category
 class CategoryAdmin(admin.ModelAdmin):
 
     # sets up values for how admin site lists categories
-    list_display = ('name', 'created_at', 'updated_at',)
+    list_display = ('name', 'slug', 'created_at', 'updated_at',)
     ordering = ['name']
-    search_fields = ['name', 'description', 'meta_keywords', 'meta_description']
-    exclude = ('created_at', 'updated_at',)
     prepopulated_fields = {'slug': ('name',)}
 
