@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'meroshop',
     'Product',
     'cart',
+    
 ]
 
 CART_SESSION_ID = 'cart'
