@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'Product',
     'cart',
     'orders',
+    'accounts',
     
 ]
+
 
 CART_SESSION_ID = 'cart'
 
@@ -76,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'eshop.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
