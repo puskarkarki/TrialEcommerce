@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Product.urls', namespace='Product')),
     path('meroshop/', include('meroshop.urls', namespace='meroshop')),
+    path('orders/', include('orders.urls', namespace='orders')),
     #path('cart/', include('cart.urls', namespace='cart')),
 ]
 if settings.DEBUG:
