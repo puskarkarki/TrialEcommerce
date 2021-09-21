@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Product.urls', namespace='Product')),
     path('orders/', include('orders.urls', namespace='orders')),
-    #path('cart/', include('cart.urls', namespace='cart')),
+    path('cart/', include('cart.urls', namespace='cart')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
