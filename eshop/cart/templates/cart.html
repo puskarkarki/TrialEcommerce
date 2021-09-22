@@ -1,4 +1,4 @@
-{% extends "Product/base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
@@ -38,7 +38,7 @@
               </form>
             </td>
             <td>
-              <form action="{% url 'cart:cart_remove_product' product.id %}" method="post">
+              <form action="{% url "cart:cart_remove_product" product.id %}" method="post">
                 <input type="submit" value="Remove">
                 {% csrf_token %}
               </form>
